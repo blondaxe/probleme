@@ -1,0 +1,32 @@
+{% load static %}
+
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../../static/styles.css' %}" />
+
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Revenir à l'acceuil</a>
+    <a href="../../voir_problemes/">Voir tous les problèmes</a>
+
+    <h1>{{ probleme.nom }}</h1>
+
+{% if solutions %}
+  <h2>Solutions :</h2>
+  <ul>
+    {% for solution in solutions %}
+      <li>{{ solution }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Aucune solution pour ce problème</p>
+{% endif %}
+
+
+</body>
+</html>
